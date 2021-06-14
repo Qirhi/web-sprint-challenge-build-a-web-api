@@ -12,11 +12,17 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Pull your server into this file and start it!
 */
+const dotenv = require("dotenv").config()
 const server = require('./api/server');
 
 // launch server
-const port = 4000;
+const port = process.env.PORT || 5000
 
 server.listen(port, () => {
     console.log(`*** Server Running on http://localhost:${port} ***`);
 });
+
+console.log(__dirname)
+console.log(__filename)
+console.log(process.env.USER) /* .USERNAME for windows */
+console.log(process.env.PORT) 
